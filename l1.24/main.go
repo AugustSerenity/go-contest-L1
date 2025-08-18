@@ -9,8 +9,8 @@ type Point struct {
 	x, y float64
 }
 
-func NewPoint(x, y float64) Point {
-	return Point{
+func NewPoint(x, y float64) *Point {
+	return &Point{
 		x: x,
 		y: y,
 	}
@@ -26,7 +26,7 @@ func main() {
 	p1 := NewPoint(11, 5)
 	p2 := NewPoint(0, 0)
 
-	distance := p1.Distance(&p2)
+	distance := p1.Distance(p2)
 
 	fmt.Println(distance)
 
